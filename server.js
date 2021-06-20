@@ -56,7 +56,7 @@ const app = restify.createServer();
   });
 
   // Get notes
-  app.get('/notes', (req, res) => {
+  app.get('/giventake', (req, res) => {
     const token = req.header('x-access-token');
 
     NotesController.getNotes(token, (statusCode, errorMessage, notes) => {
@@ -73,7 +73,7 @@ const app = restify.createServer();
   });
 
   // Add note
-  app.put('/notes', (req, res) => {
+  app.put('/giventake', (req, res) => {
     const token = req.header('x-access-token');
     const noteContent = req.body.content || '';
 
@@ -95,7 +95,7 @@ const app = restify.createServer();
   });
 
   // Patch note
-  app.patch('/notes/:id', (req, res) => {
+  app.patch('/giventake/:id', (req, res) => {
     const token = req.header('x-access-token');
     const noteID = req.params.id;
     const noteContent = req.body.content;
@@ -119,7 +119,7 @@ const app = restify.createServer();
   });
 
   // Delete note
-  app.del('/notes/:id', (req, res) => {
+  app.del('/giventake/:id', (req, res) => {
     const token = req.header('x-access-token');
     const noteID = req.params.id;
 

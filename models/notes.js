@@ -4,7 +4,7 @@ const Notes = {};
 
 // Get notes
 Notes.getAll = (userID, callback) => {
-  const notesCollection = database.db.collection('notes');
+  const notesCollection = database.db.collection('objects');
 
   notesCollection
     .find({
@@ -15,7 +15,7 @@ Notes.getAll = (userID, callback) => {
 
 // Get note
 Notes.get = (noteID, callback) => {
-  const notesCollection = database.db.collection('notes');
+  const notesCollection = database.db.collection('objects');
 
   notesCollection
     .find({
@@ -31,7 +31,7 @@ Notes.get = (noteID, callback) => {
 
 // Add note
 Notes.add = (content, userID, callback) => {
-  const notesCollection = database.db.collection('notes');
+  const notesCollection = database.db.collection('objects');
 
   const note = {
     content: content,
@@ -50,7 +50,7 @@ Notes.add = (content, userID, callback) => {
 
 // Patch note
 Notes.patch = (noteID, noteContent, callback) => {
-  const notesCollection = database.db.collection('notes');
+  const notesCollection = database.db.collection('objects');
 
   notesCollection.findOneAndUpdate(
     {
@@ -71,7 +71,7 @@ Notes.patch = (noteID, noteContent, callback) => {
 
 // Delete note
 Notes.delete = (noteID, callback) => {
-  const notesCollection = database.db.collection('notes');
+  const notesCollection = database.db.collection('objects');
 
   notesCollection.deleteOne(
     {
