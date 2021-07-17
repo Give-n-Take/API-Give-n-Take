@@ -82,11 +82,7 @@ checkUsername = (username, callback) => {
   if (username.length < 2 || username.length > 20) {
     return callback('Votre identifiant doit contenir entre 2 et 20 caractères');
   }
-  if (!/^[a-z]+$/.test(username)) {
-    return callback(
-      'Votre identifiant ne doit contenir que des lettres minuscules non accentuées'
-    );
-  }
+  
   return callback(null);
 };
 

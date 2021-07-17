@@ -55,7 +55,7 @@ const app = restify.createServer();
     );
   });
 
-  // Get notes
+  // Get 
   app.get('/giventake', (req, res) => {
     const token = req.header('x-access-token');
 
@@ -72,7 +72,7 @@ const app = restify.createServer();
     });
   });
 
-  // Add note
+  // Add 
   app.put('/giventake', (req, res) => {
     const token = req.header('x-access-token');
     const noteContent = req.body.content || '';
@@ -94,7 +94,7 @@ const app = restify.createServer();
     );
   });
 
-  // Patch note
+  // Patch
   app.patch('/giventake/:id', (req, res) => {
     const token = req.header('x-access-token');
     const noteID = req.params.id;
@@ -118,7 +118,7 @@ const app = restify.createServer();
     );
   });
 
-  // Delete note
+  // Delete 
   app.del('/giventake/:id', (req, res) => {
     const token = req.header('x-access-token');
     const noteID = req.params.id;
