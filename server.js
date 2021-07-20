@@ -56,7 +56,7 @@ const app = restify.createServer();
   });
 
   // Get 
-  app.get('/giventake', (req, res) => {
+  app.get('/giventakeee', (req, res) => {
     const token = req.header('x-access-token');
 
     NotesController.getNotes(token, (statusCode, errorMessage, notes) => {
